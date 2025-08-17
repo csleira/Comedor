@@ -1,0 +1,63 @@
+{
+    "usuarios": [
+        {
+            "id": 100,
+            "nombre": "ADMIN",
+            "email": "admin@example.com",
+            "password": "admin",
+            "rol": "admin",
+            "activo": true
+
+        },
+        {
+            "id": 101,
+            "nombre": "USUARIO",
+            "password": "usuario",
+            "email": "usuario@example.com",
+            "rol": "usuario",
+            "activo": true
+
+        },
+        {
+            "id": 102,
+            "nombre": "COCINA",
+            "password": "cocina",
+            "email": "cocina@example.com",
+            "rol": "cocina",
+            "activo": true
+ 
+        },
+        {
+            "id": 103,
+            "nombre": "RRHH",
+            "password": "rrhh",
+            "email": "rrhh@example.com",
+            "rol": "rrhh",
+            "activo": true
+        }
+    ],
+    "roles": [
+        {
+            "id": 1,
+            "nombre": "admin",
+            "activo": true
+        },
+        {
+            "id": 2,
+            "nombre": "usuario",
+            "activo": true
+        },
+        {
+            "id": 3,
+            "nombre": "cocina",
+            "activo": true
+        },
+        {
+            "id": 4,
+            "nombre": "rrhh",
+            "password": "rrhh",
+            "activo": true
+        }
+    ]
+
+}

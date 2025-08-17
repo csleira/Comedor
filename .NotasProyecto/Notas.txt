@@ -1,0 +1,20 @@
+Los origenes de datos, se definen todos en los context:
+Usuarios - JASON DB
+Roles - JASON DB
+Menues - array
+Galeria - API
+Configuracion - LocalStorage
+
+Criterio para los CONTEXT:
+1- Se definen las variables que van a contener los datos referentes a la pagina y que van a 
+   ser usados en otras paginas
+2- se definen las funciones GET para traer los datos de las fuentes (API,localStore o DB)
+3- se definen las funciones SET para persistir los datos en las fuentes correspondientes
+4- como las variables de CONTEXT son publicas, se utlizan en todos los componentes y NO usamos la 
+   funciones GET y SET para actualizar como si fueran propiedades.
+
+Criterio ProtectedRoutesComp:
+La funcion, recibe 2 parametros el componente hijo y un array con los roles permitidos.
+Cuando se llama a la funcion, se pasa como parametro solo el array y se entiende que el componente
+hijo esta incluido.
+
