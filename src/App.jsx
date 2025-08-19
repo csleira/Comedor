@@ -18,7 +18,12 @@ function App() {
           {/* Route index, Ruta predeterminada por defecto, cuando se entre al padre */}
           <Route path="/" element={<LayautComp />}>
             <Route index element={<InicioPage />} />
-            <Route path="menues" element={<MenuesPage />} />
+            <Route path="menues" element={
+                <ProtectedRoutesComp aRolesPermitidos={["admin","usuario"]}>
+                    <MenuesPage />
+                </ProtectedRoutesComp> 
+              } 
+            />
             <Route path="galeria" element={<GaleriaPage />} />
             <Route path="configuracion" element={
                 <ProtectedRoutesComp aRolesPermitidos={["admin"]}>

@@ -16,17 +16,20 @@ const FooterComp = () => {
       <footer className="text-gray-600 body-font">
         <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
           <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-            <svg
+             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="w-10 h-10 text-white p-2 bg-orange-500 rounded-full"
               viewBox="0 0 24 24"
             >
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+              {/* Tenedor */}
+              <path d="M6 2v7M8 2v7M10 2v7M7 9v13" />
+              {/* Cuchillo */}
+              <path d="M14 2c0 4 2 6 2 10v10M18 2c0 5-2 7-2 10" />
             </svg>
             <span className="ml-3 text-xl">{aConfig.nombre}</span>
           </a>

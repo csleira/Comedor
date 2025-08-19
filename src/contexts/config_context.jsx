@@ -8,13 +8,13 @@ const ConfigContext = createContext();
 function ConfigProvider(props) {
 
     // Array de Parametros
-    const [aConfig, setConfig] = useState([]);
+    const [aConfig, setConfig] = useState({
+        nombre: "", direccion: "", telefono: "", correo: ""});
     const data_default = { nombre: "COMEDOR", direccion: "Calle 1234", telefono: "598 23456 7890", correo: "comedor@comedor.com.uy" }
 
-    // funcion getParametros, carga el array con Informacion del Local Storage
+    // Funcion getParametros, carga el array aConfig con Informacion del Local Storage
     // el localStorage solo guarda cadenas de texto (string), 
     // convertir a texto-string a texto-JSON para usar como objeto con JSON.parse
-
     const getParametros = () => {
 
         try {
@@ -26,10 +26,9 @@ function ConfigProvider(props) {
         }
     };
 
-    // funcion setParametros, actualiza el array el array con Informacion y persiste en el Local Storage
+    // Funcion setParametros, persiste en el Local Storage el array aConfig
     // el localStorage solo guarda cadenas de texto (string),
     // convertir de texto-JSON  a texto-string para guardar con JSON.stringify
-
     const setParametros = () => {
 
         try {
@@ -39,7 +38,6 @@ function ConfigProvider(props) {
             
         }
    
-
     };
 
 
@@ -54,7 +52,7 @@ function ConfigProvider(props) {
     }
 
     return (
-        <ConfigContext.Provider value = {{ aConfig, getParametros, setParametros }}>
+        <ConfigContext.Provider value = {{ aConfig, setConfig, getParametros, setParametros }}>
             {props.children}
         </ConfigContext.Provider>
    

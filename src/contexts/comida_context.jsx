@@ -23,7 +23,7 @@ function ComidaProvider(props) {
                 throw new Error(`Error HTTP: ${response}`);
             }
             const data = await response.json();
-            // La API devuelve el array simple message de URLs -> lo convertimos en objetos con id y valor
+            // La API devuelve el array simple de message de URLs -> lo convertimos en objetos con id y valor
             const data_object = data.message.map( (valor, index) => ({id: index, url: valor}) );
             setComidas(data_object); 
 

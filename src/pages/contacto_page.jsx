@@ -13,7 +13,7 @@ const ContactoPage = () => {
     mensaje: ""
   });
 
-  const handleSubmit = (evento) => {
+  const handleFormSubmit = (evento) => {
     /* Evita el comportamiento por defecto de los formularios, 
     el formulario no va a recargar la pagina cuando se envie. */
     evento.preventDefault();
@@ -65,7 +65,7 @@ const ContactoPage = () => {
               en nuestro local. Será un placer atenderlo.
             </p>
           </div>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleFormSubmit}>
             <div className="lg:w-1/2 md:w-2/3 mx-auto">
               <div className="flex flex-wrap -m-2">
                 <div className="p-2 w-1/2">

@@ -7,8 +7,8 @@ import { UsuarioContext } from "../contexts/usuario_context";
 const HeaderComp = () => {
 
   const btnButtonCSS =
-    "inline-block py-1 text-black hover:text-orange-700 cursor-pointer mr-4";
-  const btnButtonCSSactive = "inline-block py-1 text-orange-700 mr-4";
+    "inline-block py-1 text-white hover:text-orange-400 cursor-pointer mr-4";
+  const btnButtonCSSactive = "inline-block py-1 text-orange-400 mr-4";
 
   const{ aConfig, getParametros } = useContext(ConfigContext);
   const{ oUsuario,usuarioLogout } = useContext(UsuarioContext);
@@ -39,8 +39,22 @@ const HeaderComp = () => {
     <>
       <header className="text-gray-600 body-font">
         <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center bg-gray-600">
-           <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-
+           <a className="flex title-font font-medium items-center text-white mb-4 md:mb-0">
+             <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="w-10 h-10 text-white p-2 bg-orange-500 rounded-full"
+              viewBox="0 0 24 24"
+            >
+              {/* Tenedor */}
+              <path d="M6 2v7M8 2v7M10 2v7M7 9v13" />
+              {/* Cuchillo */}
+              <path d="M14 2c0 4 2 6 2 10v10M18 2c0 5-2 7-2 10" />
+            </svg>
             <span className="ml-3 text-2xl">{aConfig.nombre}</span>
           </a>
           <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
