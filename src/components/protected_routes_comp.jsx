@@ -6,8 +6,6 @@ export default function ProtectedRoutesComp({ children, aRolesPermitidos }) {
 
   const { oUsuario } = useContext(UsuarioContext);
 
-  console.log(oUsuario);
-
   // Sino esta logueado (esta variable se carga en Login), lo lleva a la pagina de Login //
   if (!oUsuario || !oUsuario.usuario) return <Navigate to="/login" replace />;
 

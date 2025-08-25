@@ -7,6 +7,7 @@ import GaleriaPage from "./pages/galeria_page"
 import ContactoPage from "./pages/contacto_page"
 import ConfigPage from "./pages/config_page"
 import LoginPage from "./pages/login_page"
+import PedidoPage from "./pages/pedido_page"
 
 function App() {
 
@@ -19,14 +20,20 @@ function App() {
           <Route path="/" element={<LayautComp />}>
             <Route index element={<InicioPage />} />
             <Route path="menues" element={
-                <ProtectedRoutesComp aRolesPermitidos={["admin","usuario"]}>
+                <ProtectedRoutesComp aRolesPermitidos={["admin","usuario","cocina","rrhh"]}>
                     <MenuesPage />
+                </ProtectedRoutesComp> 
+              } 
+            />
+            <Route path="pedido" element={
+                <ProtectedRoutesComp aRolesPermitidos={["admin","usuario","cocina","rrhh"]}>
+                    <PedidoPage />
                 </ProtectedRoutesComp> 
               } 
             />
             <Route path="galeria" element={<GaleriaPage />} />
             <Route path="configuracion" element={
-                <ProtectedRoutesComp aRolesPermitidos={["admin"]}>
+                <ProtectedRoutesComp aRolesPermitidos={["admin","cocina","rrhh"]}>
                     <ConfigPage />
                 </ProtectedRoutesComp> 
               }
