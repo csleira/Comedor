@@ -9,8 +9,12 @@ function ConfigProvider(props) {
 
     // Array de Parametros
     const [aConfig, setConfig] = useState({
-        nombre: "", direccion: "", telefono: "", correo: ""});
-    const data_default = { nombre: "COMEDOR", direccion: "Calle 1234", telefono: "598 23456 7890", correo: "comedor@comedor.com.uy" }
+        nombre: "", direccion: "", telefono: "", correo: "", horaPedidosInicio: "", horaPedidosFin: ""});
+
+    // variable con valores por defecto, se carga la primera vez sino hay valores    
+    const data_default = { nombre: "COMEDOR", direccion: "Calle 1234", telefono: "598 23456 7890",
+                           correo: "comedor@comedor.com.uy", horaPedidosInicio: "07:00", horaPedidosFin: "10:00"}
+
 
     // Funcion getParametros, carga el array aConfig con Informacion del Local Storage
     // el localStorage solo guarda cadenas de texto (string), 

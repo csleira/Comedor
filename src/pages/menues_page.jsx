@@ -1,11 +1,14 @@
 import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import {MenuContext} from "../contexts/menu_context";
+import {ConfigContext} from "../contexts/config_context";
 import CardMenu from "../components/card_menu_comp";
 
 const MenuesPage = () => {
   
-   const{ aMenues, getMenues } = useContext(MenuContext);
+  const{ aMenues, getMenues } = useContext(MenuContext);
+  const {aConfig} = useContext(ConfigContext);
+  
   const navigate = useNavigate();
  
   // Hook useEffect sin parametros, se ejecuta solo cuando se incializa el componente
@@ -27,11 +30,32 @@ const MenuesPage = () => {
       );
   };
 
+  // funcion para controlar el horario de Pedidos
+  const estaDentroHorario = () => {
+    const ahora = new Date();
+
+    // Convertimos hora inicio y fin de string a número explícitamente
+    const [horaInicio, minutoInicio] = aConfig.horaPedidosInicio
+      .split(":")
+      .map(str => Number(str));
+          const [horaFin, minutoFin] = aConfig.horaPedidosFin
+      .split(":")
+      .map(str => Number(str));
+
+    // Creamos objetos Date para comparar
+    const inicio = new Date();
+    inicio.setHours(horaInicio, minutoInicio, 0, 0);
+
+    const fin = new Date();
+    fin.setHours(horaFin, minutoFin, 0, 0);
+
+    // Retorna true si la hora actual está dentro del rango
+    return ahora >= inicio && ahora <= fin;
+  };
+
   // funcion para abrir el formulario de Pedidos
   const handleButtonSubmit = (evento) => {
-    
     navigate("/pedido");
-
   };
 
 
@@ -52,7 +76,7 @@ const MenuesPage = () => {
             </p>
           </div>
           <HTMLmenues/>
-          <button onClick={handleButtonSubmit} className="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+          <button disabled={!estaDentroHorario()} onClick={handleButtonSubmit} className="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
             Realizar Pedido
           </button>
         </div>

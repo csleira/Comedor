@@ -36,7 +36,14 @@ const ConfigPage = () => {
   const handleInputTelefono = (evento) => {
     setConfig( {...aConfig, telefono:evento.target.value} );
   };
+
+  const handleInputHoraPedidosInicio = (evento) => {
+    setConfig( {...aConfig, horaPedidosInicio:evento.target.value} );
+  };
   
+  const handleInputHoraPedidosFin = (evento) => {
+    setConfig( {...aConfig, horaPedidosFin:evento.target.value} );
+  };
 
   return (
     <>
@@ -138,6 +145,40 @@ const ConfigPage = () => {
                         value={aConfig ? aConfig.direccion : ""}
                         onChange={handleInputDireccion}
                       />
+                    </fieldset>
+                  </div>
+                </div>
+
+                <div className="p-2 w-1/2">
+                  <div className="relative">
+                    <fieldset className="flex space-x-2">
+                      <div className="flex-1">
+                        <label htmlFor="hora_inicial" className="leading-7 text-sm text-gray-600">
+                          Hora de Inicio
+                        </label>
+                        <input
+                          type="time"
+                          id="hora_inicial"
+                          name="hora_inicial"
+                          className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                          value={aConfig ? aConfig.horaPedidosInicio : ""}
+                          onChange={handleInputHoraPedidosInicio}
+                        />
+                      </div>
+
+                      <div className="flex-1">
+                        <label htmlFor="hora_final" className="leading-7 text-sm text-gray-600">
+                          Hora de Fin
+                        </label>
+                        <input
+                          type="time"
+                          id="hora_final"
+                          name="hora_final"
+                          className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                          value={aConfig ? aConfig.horaPedidosFin : ""}
+                          onChange={handleInputHoraPedidosFin}
+                        />
+                      </div>
                     </fieldset>
                   </div>
                 </div>
