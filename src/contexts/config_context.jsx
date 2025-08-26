@@ -1,4 +1,4 @@
-// Contexto para Configuraciones
+// Contexto para Configuraciones, implementa las funciones para manejar un array de Configuraciones.
 
 import { createContext} from "react";
 import { useState } from "react";

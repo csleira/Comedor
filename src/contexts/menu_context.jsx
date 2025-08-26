@@ -1,4 +1,4 @@
-// Contexto para Menues
+// Contexto para Menues,, implementa las funciones para manejar un array de Menues.
 
 import { createContext} from "react";
 import { useState } from "react";
@@ -9,6 +9,7 @@ function MenuProvider(props) {
 
     // Array de Menues
     const [aMenues, setMenues] = useState([]);
+    const [aMenuDia, setMenuDia] = useState([]);
 
     // funcion getMenues, carga el array con Informacion.
     const getMenues = () => {
@@ -55,8 +56,25 @@ function MenuProvider(props) {
 
     }; 
 
+    // funcion getMenuDia, carga el array con Informacion de los Menu para el dia.
+    const getMenuDia = () => {
+        
+        const aMenu = [];
+        const hoy = new Date();
+
+        aMenues.forEach((oMenu) => {
+        if (oMenu.id === hoy.getDay()) {
+            aMenu.push(oMenu.menu1, oMenu.menu2, oMenu.postre);
+            }
+        });
+
+        setMenuDia(aMenu)
+
+    }; 
+
+
     return (
-        <MenuContext.Provider value = {{ aMenues, getMenues}}>
+        <MenuContext.Provider value = {{ aMenues, getMenues, aMenuDia, getMenuDia}}>
             {props.children}
         </MenuContext.Provider>
    

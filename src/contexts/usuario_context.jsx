@@ -1,4 +1,4 @@
-// Contexto para Usuarios
+// Contexto para Usuarios, implementa las funciones para manejar un array de Usuarios.
 
 import { createContext, useState } from "react";
 

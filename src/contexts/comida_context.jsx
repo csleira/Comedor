@@ -1,4 +1,4 @@
-// Contexto para Comida 
+// Contexto para Comida, implementa las funciones para manejar un array de Comidas.
 
 import { createContext } from "react";
 import { useState } from "react";
