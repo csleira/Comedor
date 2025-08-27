@@ -1,3 +1,30 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
+
 @tailwind base;
 @tailwind components;
-@tailwind utilities
+@tailwind utilities;
+
+
+/* Fuentes definidas dentro del Proyecto */
+@font-face {
+  font-family: "CascadiaCode";
+  src: url("./src/assets/fonts/Cascadia_Code/CascadiaCode-VariableFont_wght.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CascadiaCode-Italic";
+  src: url("./src/assets/fonts/Cascadia_Code/CascadiaCode-Italic-VariableFont_wght.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Arima";
+  src: url("./src/assets/fonts/Arima/Arima-VariableFont_wght.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+

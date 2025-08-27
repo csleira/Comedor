@@ -7,8 +7,15 @@ export default {
     "./components/**/*.{html,js}",
   ],
   theme: {
-    extend: {},
-  },
-  plugins: [],
-}
+    extend: {
+      fontFamily: {
+        cascadiacode: ["CascadiaCode", , "Courier New", "monospace"],
+        cascadiacode_italic: ["CascadiaCode", "cursive"],
+        arima:["Arima","arial"],
+        mulish:["Mulish","system-ui"]
+      },
+    },
+    plugins: [],
+  }
 
+}

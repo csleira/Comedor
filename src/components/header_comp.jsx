@@ -55,7 +55,7 @@ const HeaderComp = () => {
               {/* Cuchillo */}
               <path d="M14 2c0 4 2 6 2 10v10M18 2c0 5-2 7-2 10" />
             </svg>
-            <span className="ml-3 text-2xl">{aConfig.nombre}</span>
+            <span className="font-mulish ml-3 text-3xl">{aConfig.nombre}</span>
           </a>
           <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
             <NavLink

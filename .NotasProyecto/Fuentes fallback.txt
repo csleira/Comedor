@@ -1,0 +1,6 @@
+serif	    Letras con remates (Times, Georgia)	"Times New Roman", serif
+sans-serif	Letras sin remates (Arial, Helvetica)	"Arial", sans-serif
+monospace	Todas las letras ocupan el mismo ancho (Courier, Consolas)	"Courier New", monospace
+cursive	    Letras estilo manuscrito	"Comic Sans MS", cursive
+fantasy	    Letras decorativas	"Impact", fantasy
+system-ui	Fuente por defecto del sistema operativo	system-ui
