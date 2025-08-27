@@ -17,7 +17,7 @@ function UsuarioProvider(props) {
         setIsLoading(true);
         try {
 
-            const response = await fetch("http://localhost:8000/users");
+            const response = await fetch(`${import.meta.env.VITE_URL_DB_SERVER}/users`);
             if (!response.ok) {
                 throw new Error(`Error HTTP: ${response}`);
             }

@@ -18,7 +18,7 @@ function ComidaProvider(props) {
         setIsLoading(true);
         try {
 
-            const response = await fetch("https://dog.ceo/api/breeds/image/random/6");
+            const response = await fetch(`${import.meta.env.VITE_URL_API_DOG_CEO}`);
             if (!response.ok) {
                 throw new Error(`Error HTTP: ${response}`);
             }
